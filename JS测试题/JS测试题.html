@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //   1.  如果数组中存在 item，则返回元素在数组中的位置，否则返回 -1
+    //     function indexOf(arr, item) {
+    //         var res = -1;
+    //         for(var i=0;i<arr.length;i++){
+    //             if(arr[i] === item){
+    //                 res =i;
+    //             }
+    //         }
+    //         document.write(res)    
+    //     }
+    //     indexOf([1,2,3,4,5,6],9)
+
+
+    // 2.    计算给定数组 arr 中所有元素的总和
+    // function sum(arr){
+    //     var temp = 0 ;
+    //     for(var i=0;i<arr.length;i++){
+    //         temp += arr[i];
+    //     }
+    //     return temp;
+    // }
+    // sum([1,2,3,4,5])
+
+
+    //3.    移除数组 arr 中的所有值与 item 相等的元素。不要直接修改数组 arr，结果返回新的数组
+    // function remove(arr, item) {
+    //     var list = [];
+    //     for(var i=0 ; i<arr.length ; i++){
+    //         if(arr[i] != item){
+    //             list.push(arr[i])
+    //         }
+    //     }
+    //     return list
+    // }
+
+
+    //4.    移除数组 arr 中的所有值与 item 相等的元素，直接在给定的 arr 数组上进行操作，并将结果返回
+    // function removeWithoutCopy(arr, item) {
+    //     for(var i=0 ; i<arr.length ; i++){
+    //         if(arr[i] === item){
+    //             arr.splice(i,1);
+    //             if(i=0){
+    //                 i=0;
+    //             }else{
+    //                 i--;
+    //             }
+    //         }
+    //     }
+    //     document.write(arr)
+    // }
+    // removeWithoutCopy([2,2,1,2,5,2,3,4,2], 2)
+
+
+    //5.     在数组 arr 末尾添加元素 item。不要直接修改数组 arr，结果返回新的数组
+    // function append(arr, item) {
+    //     var list =[];
+    //     for(var i=0 ; i<arr.length ;i++){
+    //         list.push(arr[i])
+    //     }
+    //     list[list.length] = item;
+    //     document.write(list)
+    // }
+    // append([1,2,3],6)
+
+
+    //6.     删除数组 arr 最后一个元素。不要直接修改数组 arr，结果返回新的数组
+    // function truncate(arr) {
+    //     var list = [];
+    //     for(var i=0 ; i<arr.length-1 ; i++){
+    //         list.push(arr[i])
+    //     }
+    //     document.write(list)
+    // }
+    // truncate([1,2,3,4,5,6])
+
+
+    //7.   在数组 arr 开头添加元素 item。不要直接修改数组 arr，结果返回新的数组
+    // function prepend(arr, item) {
+    //     var list =[item];
+    //     for(var i=0 ; i<arr.length ; i++){
+    //         list.push(arr[i])
+    //     }
+    //    document.write(list)
+    // }
+    // prepend([2,3,4,5], 1)
+
+
+    //8.   删除数组 arr 第一个元素。不要直接修改数组 arr，结果返回新的数组
+    // function curtail(arr) {
+    //     var list =[];
+    //     for(var i=1 ; i<arr.length ; i++){
+    //         list.push(arr[i])
+    //     }
+    //    document.write(list)
+    // }
+    // curtail([1,2,3,4,5])
+
+
+    //9.   合并数组 arr1 和数组 arr2。不要直接修改数组 arr，结果返回新的数组
+    // function concat(arr1, arr2) {
+    //     var list =[];
+    //     for(var i=0 ; i<arr1.length ; i++){
+    //         list.push(arr1[i])
+    //     }
+    //     for(var i=0 ; i<arr2.length ; i++){
+    //         list.push(arr2[i])
+    //     }
+    //    document.write(list)
+    // }
+    // concat([1,2,3,4,5], [6,7,8,9,10])
+
+
+    // 10.      在数组 arr 的 index 处添加元素 item。不要直接修改数组 arr，结果返回新的数组
+    // function insert(arr, item, index) {
+    //     var list = [];
+    //     for(var i=0 ; i<arr.length ; i++){     
+    //         if(i === index){
+    //             list.push(item)
+    //         }
+    //         list.push(arr[i])  
+    //     }
+    //     document.write(list)    
+    // }
+    // insert([1, 2, 3, 4], 'z', 2)
+
+
+    // 11.     统计数组 arr 中值等于 item 的元素出现的次数
+    // function count(arr, item) {
+    //     var temp = 0;
+    //     for(var i=0 ; i<arr.length ; i++){
+    //         if(arr[i] === item){
+    //             temp +=1
+    //         }
+    //     }
+    //     document.write(temp)
+    // }
+    // count([1,1,2,2,3,3],3)
+
+    // 12.     找出数组 arr 中重复出现过的元素
+    // function duplicates(arr) {
+
+    // }
+    // duplicates([1,2,3,4,5,5,4,3,2,1])
+
+
+    // 13.     为数组 arr 中的每个元素求二次方。不要直接修改数组 arr，结果返回新的数组
+    // function square(arr) {
+    //     var list = [];
+    //     for(var i=0 ; i<arr.length ; i++){
+    //         list.push(arr[i]*arr[i])
+    //     }
+    //     document.write(list)
+    // }
+    // square([1,2,3,4])
+    
+
+
+</script>
+</html>

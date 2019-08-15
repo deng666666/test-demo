@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 冒泡
+    function maopao(arr){
+        var temp;   //定义一个空的对象
+        for(var i=0; i<arr.length ; i++){
+            for(var j=0 ; j<arr.length-1-i ; j++){
+                if(arr[j]>arr[j+1]){    //这一步是让大值与小值比较，然后交换值。
+                    temp = arr[j]       // 让空的对象等于大值
+                    arr[j] = arr[j+1]   // 让大值的哪一位改为小值
+                    arr[j+1] =temp      // 让小值的哪一位改为大值
+                }
+            }
+        }
+        return arr
+    }
+
+    // 选择
+    function xuanze(arr){
+        for(var i=0 ; i< arr.length ; i++){
+            var min = arr[i];   //先默认第一位为最小值
+            var temp;
+            var index =i;
+            for(var j=i+1 ;j < arr.length ; j++){
+                if(arr[j] < min){   // 让默认的最小值与它后面的值比较大小
+                    min = arr[j]    // 找到比默认min小的值，然后赋值给min
+                    index = j       // 改变角标所指的内容
+                }
+            }
+            temp = arr[i];          //等于是让找到的最小值与默认的最小值做替换
+            arr[i] = min;           //  arr[i] = min = arr[j]
+            arr[index] = temp;      //  arr[j] = arr[i]    原先定义的最小值(min = arr[i])与后面比较后找到的最小值(min = arr[j])交换位置
+        }
+        return arr
+    }
+
+    // 插入
+    function charu(arr){
+
+    }
+
+    // alert(maopao([11,25,3,41,15,5,1,8,3]))
+    // alert(xuanze([11,25,3,41,15,5,1,8,3]))
+    alert(charu([11,25,3,41,15,5,1,8,3]))
+
+
+
+    // // let a=10;
+    // function test(){
+    //     let a=10;
+    //     // var a='';
+    //     // var a=5
+    //     function aa(){
+    //         // a=20
+    //         alert(a)
+    //     }
+    //     aa()
+    //     alert(a)
+    // }
+    // test()
+    // alert(a)
+
+    // var arr = [8,1,69,421,54,0,1]
+    // console.log(arr)
+    // console.log(arr.sort( (a,b) =>  a-b))
+    // var arr1 = ['fdfg','daf','ad','gdf','AD','adas']
+    // console.log(arr1)
+    // console.log(arr1.sort())
+    // async function test() {  
+    //     return Promise.resolve("hello async");
+    // }
+    // async function al(){
+    //     const t = await test()
+    //     alert(t)
+    // }
+    // al()
+    // alert(test().then(res => res))
+
+
+    // function getSomething() {
+    // return "something";
+    // }
+
+    // async function testAsync() {
+    //     return Promise.resolve("hello async");
+    // }
+
+    // async function test() {
+    //     const v1 = await getSomething();
+    //     const v2 = await testAsync();
+    //     console.log(v1, v2);
+    // }
+    // test();
+</script>
+</html>
