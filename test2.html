@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+</body>
+<script>
+
+    // window.onload = function(){
+    //     var btn = document.getElementsByTagName('button')
+    //     for(var i=0 ; i<btn.length ; i++){
+    //         (function (i){
+    //             btn[i].onclick = function(){
+    //                 alert(i)
+    //             }
+    //         })(i)
+    //     }
+    // }
+    
+    // window.onload = function(){
+    //     var btn = document.getElementsByTagName('button')
+    //     for(var i=0 ; i<btn.length ; i++){
+    //         btn[i].onclick = function(){
+    //             alert(i)
+    //         }
+    //     }
+    // }
+
+    // window.onload = function(){
+    //     var btn = document.getElementsByTagName('button')
+    //     for(let i=0 ; i<btn.length ; i++){
+    //         btn[i].onclick = function(){
+    //             alert(i)
+    //         }
+    //     }
+    // }
+
+    (function(){
+        for(var i =1 ; i<10 ; i++){
+            setTimeout(function(){
+                console.log(i)              //再打印它
+            },0)
+        }
+        console.log('------------------')   //先打印它
+        for(let i =1 ; i<10 ; i++){
+            setTimeout(function(){
+                console.log(i)              //最后打印它
+            },0)
+        }
+    })()   
+
+// function A(a,b){
+//     console.log(a,b)
+//     console.log(arguments)
+// }
+// let B = b => console.log(arguments)
+// let C = (...c) => console.log(c)
+// A(1,2,3,4,5,6)
+// // B(1,2,3,4,5,6) //arguments is not defined
+// C(1,2,3,4,5,6)
+
+// const aa =100;  //const一旦赋值则无法改变 而且必须赋初始值
+// function change(){
+//     console.log(aa)    
+//     aa=101
+//     console.log(aa)
+// }
+// change()
+
+// let bb=100;
+// function change(){
+//     let bb= me.bb
+//     console.log('方法里的BB：'+bb) //在函数里再定义重复的对象名则不会修改全局里的值。
+// }
+// change()
+// console.log('全局的BB：'+bb)
+</script>
+</html>
