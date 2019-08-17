@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue双向绑定的原理</title>
+</head>
+<body>
+    <div>
+        <h3>第一个输入框</h3>
+        <input type="text" id="demo">
+    </div>
+    <div>
+        <h3>第二个输入框</h3>
+        <input type="text" id="inp">
+    </div>
+        
+        
+</body>
+<script>
+    var obj = {}
+    var show = document.getElementById('demo')
+    var inp = document.getElementById('inp')
+    // var show = document.querySelector('#demo')
+    // var inp = document.querySelector('#inp')
+    show.addEventListener('input',function(e){
+        obj.content = e.target.value     
+    })
+    inp.addEventListener('input',function(e){
+        obj.content = e.target.value     
+    })
+    Object.defineProperty(obj,'content',{
+        get: function(){
+            return val
+        },
+        set: function(newVal){
+            inp.value = newVal
+            show.value = newVal
+        }
+    })
+    obj.content = 'content'
+
+
+
+
+        // var obj  = {
+   
+        // };
+        // console.log(obj.age)
+        // Object.defineProperty(obj, 'age', {
+        //         get: function() {
+        //             console.log('我被获取了')
+        //             // console.log(obj.age)     //会无线循环get
+        //             return val;
+        //         },
+        //         set: function (newVal) {
+        //             console.log('我被设置了')
+        //             console.log(obj.age)        //每操作一次obj.age就会执行一次get
+        //         }
+        // })
+        // obj.age = 18;//在给obj设置name属性的时候，触发了set这个方法
+        // // console.log(obj.age)
+        // var val = obj.age;//在得到obj的name属性，会触发get方法
+        // console.log(val)
+        
+
+
+//      var obj  = {};
+//         var demo = document.querySelector('#demo')
+//         var inp = document.querySelector('#inp')
+//         Object.defineProperty(obj, 'name', {
+//             get: function() {
+//                  return val;
+//             },
+//             set: function (newVal) {//当该属性被赋值的时候触发
+//                 console.log('set方法')
+//                 console.log(newVal)
+//                 inp.value = newVal;
+//                 demo.innerHTML = newVal;
+//             }
+//         })
+//         inp.addEventListener('input', function(e) {
+//             console.log('input方法')
+//             console.log(e.target.value)
+//             // 给obj的name属性赋值，进而触发该属性的set方法
+//             obj.name = e.target.value;
+//             // console.log(obj.name)
+//         });
+//         // console.log(obj.name)
+//         obj.name = 'fei';//在给obj设置name属性的时候，触发了set这个方法
+//         // console.log(obj)
+// </script>
+</html>

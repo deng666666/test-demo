@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>字符串的处理</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var stringValue1 = 'Hello World'
+
+    console.log('-------------------------------------------------------')
+    console.log('1.字符方法charAt()和charCodeAt();这两个方法都接收一个参数')
+    console.log('-------------------------------------------------------')
+    console.log(stringValue1.charAt(2))         //返回给定位置的字符
+    console.log(stringValue1.charCodeAt(2))     //返回给定位置的字符的编码
+    console.log(stringValue1[2])                //返回给定位置的字符
+
+    console.log('-------------------------------------------------------')
+    console.log('2.字符串的截取方法 slice(),substring(),substr()的区别传入负值的话是从最后一位开始')
+    console.log('-------------------------------------------------------')
+    console.log(stringValue1.slice(2))                //从第二个字符开始截取至最后
+    console.log(stringValue1.slice(2,5))              //从第二个字符开始截取至第五个 索引(2,3,4)共3位
+    console.log(stringValue1.substring(2))            //从第二个字符开始截取至最后
+    console.log(stringValue1.substring(2,5))          //从第二个字符开始截取至第五个 索引(2,3,4)共3位
+    console.log(stringValue1.substr(2))               //从第二个字符开始截取至最后
+    console.log(stringValue1.substr(2,5))             //从第二个字符开始截取至第五个 索引(2,3,4，5,6)共5位
+    
+    console.log('-------------------------------------------------------')
+    console.log('3.字符串位置方法：indexOf()与lastIndexOf()')
+    console.log('-------------------------------------------------------') 
+    console.log(stringValue1.indexOf('o'))              //从前面开始查找 返回索引
+    console.log(stringValue1.lastIndexOf('o'))          //从后面开始查找 返回索引
+
+    console.log('-------------------------------------------------------')
+    console.log('4. trim()方法    这个方法会创建一个字符串的副本，删除字符串中的所有前置和后缀空格，中间的空格不删除')
+    console.log('-------------------------------------------------------') 
+    var stringValue2 = '  Hello World  '
+    var trimstringValue2 = stringValue2.trim()
+    console.log(stringValue2)
+    console.log(trimstringValue2)
+    console.log(stringValue2.trim())
+    console.log(stringValue2)        
+
+    console.log('-------------------------------------------------------')
+    console.log('5. 字符串大小写转换方法') 
+    console.log('-------------------------------------------------------')
+    console.log(stringValue1.toLowerCase())             //小写
+    console.log(stringValue1.toLocaleLowerCase())       //小写(针对特定地区的实现，在一些小语种下可能会与toLowerCase()有区别)
+    console.log(stringValue1.toUpperCase())             //大写
+    console.log(stringValue1.toLocaleUpperCase())       //大写(针对特定地区的实现，在一些小语种下可能会与toUpperCase()有区别)
+
+    console.log('-------------------------------------------------------')
+    console.log('6. 字符串的模式匹配方法')
+    console.log('-------------------------------------------------------') 
+    // 1. match()
+    var text = "haha,he he,wa wa,eheh";
+    var matches = text.match(' ');          //返回的是一个数组
+    console.log('match()---'+matches)                
+   
+    // 2. search()
+    var text = "haha,he he,wa wa,eheh";
+    var pattern = / / ;
+    var matches = text.search(pattern);         //返回字符串第一次出现的位置
+    console.log('search()---'+matches)                
+
+    // 3. replace();
+    var text = "haha,he he,wa wa,eheh";
+    var result1 = text.replace(/ /,',');        //只能替换第一个匹配的字符串，而不是所有的
+    var result2 = text.replace(/ /g,'');        //加入了正则表达式中的全局（g）标识则会替换所有的
+    console.log('replace()---'+result1)                
+    console.log('replace()---'+result2)        
+    
+    // 4. split()可以基于指定的分割符将字符串转化为数组，分隔符可以是字符串，也可以是RegExp对象，也可以指定第二个参数来控制数组的长度
+    var colorText1 = "red blue yellow green";
+    var colorText2 = "44 red 55";
+    var color1 = colorText1.split(" ");          //["red","blue","yellow","green"];
+    var color2 = colorText2.split(" ",1);        //["44"];
+    console.log('split()---'+color1)
+    console.log('split()---'+color2)
+
+    // 5. localCompare()方法
+    // 比较两个字符串
+    //  如果字符串在字母表中排在参数字符串之前则返回一个负数（大多数情况下返回-1）；
+    //  如果字符串与参数字符串相等则返回0；
+    //  如果字符串在字母表中排在参数字符串之后则返回一个正数（大多数情况下返回1）；
+
+    // 6. formCharCode()方法
+    // 接收一或多个字符编码，然后将它们转换为一个字符串，本质是与前面的charCodeAt()执行的是相反的操作
+    // alert('formCharCode()'+String.formCharCode(104,101,108,108,111));     //"hello"
+          
+         
+            
+
+</script>
+</html>

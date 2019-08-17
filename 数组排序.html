@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>数组排序</title>
 </head>
 <body>
     
 </body>
 <script>
-    // 冒泡
+    // 冒泡排序
     function maopao(arr){
         var temp;   //定义一个空的对象
         for(var i=0; i<arr.length ; i++){
@@ -25,7 +25,7 @@
         return arr
     }
 
-    // 选择
+    // 选择排序
     function xuanze(arr){
         for(var i=0 ; i< arr.length ; i++){
             var min = arr[i];   //先默认第一位为最小值
@@ -44,14 +44,44 @@
         return arr
     }
 
-    // 插入
-    function charu(arr){
-        
+    // 插入排序
+    function charu( arr ) {
+        var len = arr.length;
+        for (var i = 1; i < len; i++) {
+            var key = arr[i];
+            var j = i - 1;
+            while ( j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j--;
+            }
+            arr[j + 1] = key;
+        }
+        // for(var i=1 ; i<len ; i++){
+        //     for(var j=i-1 ; j>=0 ; j--){
+        //         if(arr[j] > arr [i])
+        //         arr[i] = arr[j]
+        //     }
+        // }
+        return arr;
     }
+    function test(){
+        var i =100
+        var start = new Date().getTime();//起始时间
+        while(i>=0){
+            xuanze([11,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3,25,3,41,15,5,1,8,3]);//执行待测函数
+            i--
+        }
+        var end = new Date().getTime();//接受时间
+        return (end - start)/100+"ms";//返回函数执行需要时间
+    }
+    console.log(test())
+    // var time = test();
+
+    // console.log(time);
 
     // alert(maopao([11,25,3,41,15,5,1,8,3]))
     // alert(xuanze([11,25,3,41,15,5,1,8,3]))
-    alert(charu([11,25,3,41,15,5,1,8,3]))
+    // alert(charu([11,25,3,41,15,5,1,8,3]))
 
 
 
